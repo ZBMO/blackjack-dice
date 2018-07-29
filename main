@@ -1,0 +1,25 @@
+#this program will simulate a dice rolling game where the user tries to get as close to 21 as possible without going over
+
+from random import randint
+
+score = 0
+wantplay = raw_input("Do you want to play the dice roll game? y or n: ")
+if wantplay == "y":
+	answer = ""
+	while score <= 21 and answer != "n":
+
+		answer = raw_input("press y to roll, n to quit: ")
+		if answer == "y":
+			roll = randint(1,6)
+			print ("you rolled a " + str(roll))
+			score += roll
+			print ("your score is now " + str(score))
+		else:
+			print ("you quit rolling, final score is " + str(score))
+			
+	else:
+		if score > 21:
+			print ("you went over 21! you lose")
+		
+else:
+	print ("you quit without even playing!")
